@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Random Number</title>
+</head>
+<body>
+	<h1></h1>
+	<script type="text/javascript">
+
+		/*prompt('Guess Number between 1 to 20!!!')
+		no = document.getElementById("demo").innerHTML =
+        Math.floor(Math.random() * 20);
+        alert (no)
+
+Math.random = ()=>1;
+//test for min
+
+Math.random = ()=> 20 - Number.EPSILON;
+//test for max*/
+
+var x = Math.floor(Math.random() * 20) + 1;
+var turns = 5;
+var hint = 'Guess my number, 1-20!';
+
+while (turns > 0) {
+  var guess = prompt(hint +
+      ' You have ' + turns + ' guesses left.');
+  if (!guess) break;
+  guess = Number(guess);
+  if (guess == x) {
+  //	turns+=guess;
+    document.write('<p>YOU WIN!</p>' );
+    	//+'<p>YOU GUESS ' + Number(turns++)+ ' TIMES');
+    turns = 0;
+  } else 
+  
+  {
+    hint = 'Nope.';
+    if (guess < x) hint += 'Too Small!';
+    if (guess > x) hint += ' Too Big!';
+    turns = turns - 1;
+
+
+
+  }
+}
+alert('The secret number was ' + x + '.');
+if (guess != x) {
+document.write('<p>YOU FAIL!</p>' );
+}
+	</script>
+
+</body>
+</html>
